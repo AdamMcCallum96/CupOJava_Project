@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +53,7 @@ hr {
 </head>
 <body>
 <div class="container">
-<form action="/createUser">
+<form method="POST" action="/updateUser?id=${transitUser.id}">
   <div>
     <h1>User Register</h1>
     <p>Please enter the following details:</p>
@@ -60,32 +62,32 @@ hr {
 
 	<label for="firstName"><b>FirstName</b></label>
   <br>
-    <input type="text" placeholder="Enter Your FirstName" name="firstName" id="firstName" required>
+    <input type="text" placeholder="Enter Your FirstName" name="firstName" id="firstName" value="${transitUser.firstName}" required>
     
     <br><br>
     
     <label for="username"><b>Username</b></label>
     <br>
-    <input type="text" placeholder="Enter username" name="username" id="username" required>
+    <input type="text" placeholder="Enter username" name="username" id="username" value="${transitUser.username}" required  disabled="disabled">
     
   
     <br><br>
     
      <label for="email"><b>Email</b></label>
      <br>
-    <input type="text" placeholder="Enter Your Email" name="email" id="email" required>
+    <input type="text" placeholder="Enter Your Email" name="email" id="email" value="${transitUser.email}" required>
     
     <br><br>
     
      <label for="city"><b>City</b></label>
      <br>
-    <input type="text" placeholder="Enter Your City" name="city" id="city" required>
+    <input type="text" placeholder="Enter Your City" name="city" id="city" value="${transitUser.city}" required>
 
     <br><br>
     
     <label for="dob"><b>PDOB</b></label>
     <br>
-    <input type="date" placeholder="Enter your DOB" name="dob" id="dob" required>
+    <input type="date" placeholder="Enter your DOB" name="dob" id="dob" value="${transitUser.dob}" required>
     <br><br>
     
   </div>
@@ -94,27 +96,25 @@ hr {
 <div class="" style="width:50%;float:left;">
     <label for="lastName"><b>LastName</b></label>
     <br>
-    <input type="text" placeholder="Enter Your LastName" name="lastName" id="lastName" required>
+    <input type="text" placeholder="Enter Your LastName" name="lastName" id="lastName" value="${transitUser.lastName}" required>
 
 	<br><br>  
     <label for="psw"><b>Password</b></label>
     <br>
-    <input type="password" placeholder="Enter Password" name="password" id="psw" required>
+    <input type="password" placeholder="Enter Password" name="password" id="psw" value="${transitUser.password}" required>
 	<br><br>
 
      <label for="address"><b>Address</b></label>
      <br>
-    <input type="text" placeholder="Enter Your Address" name="address" id="address" required>
+    <input type="text" placeholder="Enter Your Address" name="address" id="address" value="${transitUser.address}" required>
     <br><br>
       <label for="phoneNo"><b>Phone No</b></label>
       <br>
-    <input type="text" placeholder="Enter your PhoneNumber" name="phoneNo" id="phoneNo" required>
+    <input type="text" placeholder="Enter your PhoneNumber" name="phoneNo" id="phoneNo" value="${transitUser.phoneNo}" required>
 <br><br>
   </div>
   <div class="" style="width:100%;float:left;">
-  <p>By creating an account you agree to our.</p>
-    <button type="submit" class="registerbtn">Register</button>
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
+    <button type="submit" class="registerbtn">Update</button>
   </div>
 
 </form>
