@@ -42,7 +42,7 @@ public class LoginPageController {
 			if(loginUser.getPassword().equals(password)) {
 				HttpSession loginSession = request.getSession();
 				loginSession.setAttribute("username", loginUser.getUsername());
-				
+				modelView.addObject("loggedIn", true);
 				
 				modelView.setViewName("home.jsp");
 			} else {
@@ -63,7 +63,7 @@ public class LoginPageController {
 		
 		
 		//Gives or creates the login session
-		System.out.println(username + password);
+		
 	
 		//loginSession.setAttribute(name, value);
 		return modelView; 

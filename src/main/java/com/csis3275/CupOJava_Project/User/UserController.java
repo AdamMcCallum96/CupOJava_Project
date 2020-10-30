@@ -26,7 +26,7 @@ public class UserController {
 		user.setLastName("Smith");
 		
 		//Gets user of id in list
-		List<User> thisUser = data.getStudent(1);
+		List<User> thisUser = data.getUser(1);
 		//Gets user from list
 		user = thisUser.get(0);
 		modelView.addObject(user);
