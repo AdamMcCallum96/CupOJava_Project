@@ -6,12 +6,17 @@ CREATE TABLE transitUsers (
 	password varchar(250) NOT NULL,
 	firstName varchar(250) NOT NULL,
 	lastName varchar(250) NOT NULL,
+	address varchar(250) NOT NULL,
+	city varchar(250) NOT NULL,
+	phoneNo varchar(250) NOT NULL,
+	email varchar(250) NOT NULL, 
+	dob date NOT NULL,
 	UNIQUE (username)
 );
 
 
-insert into transitUsers (username, password, firstName, lastName) VALUES
-('whatUsername','thisIsMyPassword','Adam','McCallum'),
-('JohnIsFire','john618811','John','Deets'),
-('MrAwesome','250geoleo','Peter','Smith');
+insert into transitUsers (username, password, firstName, lastName, address, city, phoneNo, email, dob) VALUES
+('whatUsername','thisIsMyPassword','heena','kashyap','scott road', 'vancouver', '7783443334', 'test@gmail.com','2020-10-10'),
+('JohnIsFire','john618811','adam','McCallum','scott road', 'vancouver', '7783443334', 'test@gmail.com','2020-10-10'),
+('MrAwesome','250geoleo','Peter','ozan','scott road', 'vancouver', '7783443334', 'test@gmail.com','2020-10-10');
 
