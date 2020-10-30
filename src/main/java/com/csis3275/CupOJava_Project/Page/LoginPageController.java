@@ -42,6 +42,7 @@ public class LoginPageController {
 			if(loginUser.getPassword().equals(password)) {
 				HttpSession loginSession = request.getSession();
 				loginSession.setAttribute("username", loginUser.getUsername());
+				loginSession.setAttribute("id", loginUser.getId());
 				modelView.addObject("loggedIn", true);
 				
 				modelView.setViewName("home.jsp");

@@ -25,7 +25,7 @@
 		<nav class="navClass">
 		<ul class="navUL">
 		<li class="navItem"><p class="navlink">Signed in as ${username}</p></li>
-		<li class="navItem-account"><a class="navLink" href="">My Account</a></li>
+		<li class="navItem-account"><a class="navLink" href="accountSettings?id=${id}">My Account</a></li>
 		<li class="navItem-account"><a class="navLink" href="/logout">Sign Out</a></li>
 </ul>
 </nav>

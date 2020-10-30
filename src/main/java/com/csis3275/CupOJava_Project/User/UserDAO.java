@@ -19,9 +19,10 @@ public class UserDAO {
 	private final String SQL_GET_ALL = "SELECT * FROM transitUsers";
 	private final String SQL_GET_USER_BY_USERNAME = "SELECT * FROM transitUsers WHERE username = ?";
 	private final String SQL_GET_USER = "SELECT * FROM transitUsers WHERE id = ?";
-	private final String SQL_CREATE_USER = "INSERT INTO transitUsers (name, email) VALUES (?,?)";
+	private final String SQL_CREATE_USER = "INSERT INTO transitUsers (username, password, firstName, lastName, address, city, phoneNo, dob, email) VALUES (?,?,?,?,?,?,?,?,?)";
 	private final String SQL_DELETE_USER = "DELETE FROM transitUsers WHERE id = ?";
-	private final String SQL_UPDATE_USER= "UPDATE transitUsers SET username= ?, password= ?, firstName= ?, lastName= ?, WHERE id = ?";
+	private final String SQL_UPDATE_USER = "UPDATE transitUsers SET password= ?, firstName= ?, lastName= ?, address= ?, city= ?, phoneNo= ? , dob= ?, email= ?  WHERE id = ?";
+	
 
 	@Autowired
 	public UserDAO(DataSource dataSource)	{
@@ -41,7 +42,7 @@ public class UserDAO {
 	}
 	
 	public boolean createUsert(User user) {
-		return jdbcTemplate.update(SQL_CREATE_USER, user.getUsername(), user.getPassword(), user.getFirstName(), user.getLastName()) > 0;
+		return jdbcTemplate.update(SQL_CREATE_USER, user.getUsername(), user.getPassword(), user.getFirstName(), user.getLastName(), user.getAddress(), user.getCity(), user.getPhoneNo(), user.getDob(), user.getEmail()) > 0;
 	}
 	
 	public boolean deleteUser(int idToDelete) {
@@ -49,7 +50,7 @@ public class UserDAO {
 	}
 	
 	public boolean updateUser(User user) {
-		return jdbcTemplate.update(SQL_UPDATE_USER, user.getUsername(), user.getPassword(), user.getFirstName(), user.getLastName(), user.getId()) > 0;
+		return jdbcTemplate.update(SQL_UPDATE_USER, user.getPassword(), user.getFirstName(), user.getLastName(), user.getAddress(), user.getCity(), user.getPhoneNo(), user.getDob(), user.getEmail(), user.getId()) > 0;
 	}
 }
 	
