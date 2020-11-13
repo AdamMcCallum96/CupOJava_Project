@@ -5,19 +5,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class User {
 
-	private Integer id;
+	private int id;
 	private String username;
 	private String password;
 	private String firstName;
 	private String lastName;
-	
-	
+
 	private String address;
 	private String city;
 	private String phoneNo;
 	private String dob;
 	private String email;
-
 	
 	
 	public String getAddress() {
@@ -50,14 +48,13 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
