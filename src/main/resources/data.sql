@@ -9,7 +9,7 @@ CREATE TABLE transitUsers (
 	address varchar(250) NOT NULL,
 	city varchar(250) NOT NULL,
 	phoneNo varchar(250) NOT NULL,
-	email varchar(250) NOT NULL, 
+	email varchar(250) NOT NULL,
 	dob date NOT NULL,
 	UNIQUE (username)
 );
