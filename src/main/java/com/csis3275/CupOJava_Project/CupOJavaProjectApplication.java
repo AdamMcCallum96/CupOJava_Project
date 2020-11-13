@@ -8,6 +8,7 @@ public class CupOJavaProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CupOJavaProjectApplication.class, args);
+		
 	}
 
 }
